@@ -19,6 +19,11 @@
     ```sql
     CREATE DATABASE online_store_tea;
     ```
+## Просмотр всех баз данных:
+- Выполнить SQL-команду для получения списка баз данных:
+```sql
+SELECT datname FROM pg_database;
+```
 ## Подключение к созданной базе данных:
 - **Подключитесь** к базе данных:
     ```sql
@@ -59,4 +64,18 @@
 - Чтобы **добавить новый столбец** в таблицу `products`, используйте команду `ALTER TABLE`, с оператором `ADD COLUMN`. Например, если вы хотите добавить столбец `description` типа `VARCHAR`, выполните следующий SQL-запрос:
     ```sql
     ALTER TABLE products ADD COLUMN description VARCHAR(255);
+    ```
+
+## Удаление Базы Данных
+- Откройте `PowerShell`: Запустите `PowerShell` от имени администратора.
+- Используйте команду `dropdb`: Введите следующую команду:
+    ```powershell
+    dropdb -U postgres online_store_tea
+    ```
+- **Введите пароль**: Если у вас настроена аутентификация по паролю, вам будет предложено ввести пароль для пользователя PostgreSQL.
+
+### С помощью SQL-запроса
+- Удалить базу данных в PostgreSQL с именем `online_store_tea` нужно использовать SQL-команду:
+    ```sql
+    DROP DATABASE online_store_tea;
     ```
